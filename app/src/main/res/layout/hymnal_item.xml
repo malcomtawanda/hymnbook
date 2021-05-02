@@ -26,6 +26,7 @@
         <TextView
             android:text="Hymn Title"
             android:id="@+id/hymn_title"
+            android:textSize="30sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

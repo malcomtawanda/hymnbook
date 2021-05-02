@@ -1,33 +1,25 @@
 package com.malcomtawanda.catholichymnbook;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.malcomtawanda.catholichymnbook.junk.HymnAdapter;
 import com.malcomtawanda.catholichymnbook.room.entity.Hymn;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    HymnalFragment fragment = new HymnalFragment();
+    //HymnalFragment fragment = new HymnalFragment();
     private HymnViewModel hymnViewModel;
 
     @Override
@@ -36,12 +28,34 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .add(R.id.main_container, HymnalFragment.class, null)
-                    .commit();
-        }
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        Fragment fragment = fragmentManager.findFragmentById(R.id.main_container);
+//
+//        if(fragment == null){
+//            fragment = new HymnalFragment();
+//            fragmentManager.beginTransaction().add(R.id.main_container, fragment).commit();
+//        }
+
+        RecyclerView recyclerView =  findViewById(R.id.hymnal_recyclerview);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter();
+        recyclerView.setAdapter(adapter);
+
+
+
+        //hymnViewModel = new ViewModelProvider(this).get(HymnViewModel.class);
+        hymnViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(HymnViewModel.class);
+        hymnViewModel.getAllHymns().observe(this, new Observer<List<Hymn>>() {
+            @Override
+            public void onChanged(List<Hymn> hymns) {
+                adapter.setHymns(hymns);
+                //Toast.makeText(MainActivity.this, "onchanged", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
 
     }

@@ -6,11 +6,6 @@
     tools:context=".HymnalFragment"
     android:background="#555555">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/hymnal_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/hymnal_item">
 
-    </androidx.recyclerview.widget.RecyclerView>
+
 </FrameLayout>

@@ -11,7 +11,7 @@ import com.malcomtawanda.catholichymnbook.room.database.HymnDatabase;
 
 import java.util.List;
 
-public class HymnalRepository {
+public class  HymnalRepository {
     private HymnalDAO hymnalDAO;
     private LiveData<List<Hymn>> allHymns;
 
