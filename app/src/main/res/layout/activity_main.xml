@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+</FrameLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/recycler_view"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        tools:listitem="@layout/hymnal_item" />-->
+
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:id="@+id/button_add_note"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        android:layout_margin="32dp"-->
+    <!--        android:background="@color/black"/>-->
+    <!--&lt;!&ndash;        android:src="@drawable/ic_add" />&ndash;&gt;-->
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--        xmlns:tools="http://schemas.android.com/tools"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:id="@+id/myContainer"-->
+    <!--        tools:context=".MainActivity">-->
+
+    <!--    &lt;!&ndash;    <fragment&ndash;&gt;-->
+    <!--    &lt;!&ndash;        android:id="@+id/listFragment"&ndash;&gt;-->
+    <!--    &lt;!&ndash;        android:name="com.malcomtawanda.catholichymnbook.junk.HymnListFragment"&ndash;&gt;-->
+    <!--    &lt;!&ndash;        tools:layout="@layout/hymn_list_fragment"&ndash;&gt;-->
+    <!--    &lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+    <!--    &lt;!&ndash;        android:layout_height="match_parent"/>&ndash;&gt;-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Hello world!"-->
+    <!--            android:textAlignment="center"-->
+    <!--            />-->
+
+
+    <!--    </LinearLayout>-->

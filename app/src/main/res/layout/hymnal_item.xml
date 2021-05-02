@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#999999"
+    android:paddingHorizontal="30dp">
+
+    <TextView
+        android:id="@+id/hymn_number"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:textSize="35sp"
+        android:text="1"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_medium"
+        />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:text="Hymn Title"
+            android:id="@+id/hymn_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Lorem ipsum dolor sit amet..."
+            android:id="@+id/hymn_lyrics_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="end">
+
+        <ImageView
+            android:id="@+id/arrow_drawable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_right"
+            android:layout_gravity="center_vertical"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
