@@ -54,7 +54,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             return hymns.size();
         }else{
             return 0;
-        }    }
+        }
+    }
 
     public void setHymns(List<Hymn> hymns) {
     }
