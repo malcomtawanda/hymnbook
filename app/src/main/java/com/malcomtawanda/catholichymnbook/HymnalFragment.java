@@ -45,29 +45,6 @@ public class HymnalFragment extends Fragment implements RecyclerViewAdapter.Item
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-    }
-
-
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_hymnal, container, false);
-        buildListData();
-        initialiseRecyclerView(view);
-
-        recyclerView = (RecyclerView) view.findViewById(R.id.hymnal_recyclerview);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-
-
-
-
-
         //hymnViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity())).get(HymnViewModel.class);
         hymnViewModel = new ViewModelProvider(requireActivity()).get(HymnViewModel.class);
         hymnViewModel.getAllHymns().observe(getViewLifecycleOwner(), new Observer<List<Hymn>>() {
@@ -77,14 +54,19 @@ public class HymnalFragment extends Fragment implements RecyclerViewAdapter.Item
                 //Toast.makeText(MainActivity.this, "onChanged", Toast.LENGTH_SHORT).show();
                 adapter = new RecyclerViewAdapter(hymns);
                 recyclerView.setAdapter(adapter);
-//                adapter.setHymns(hymns);
+                adapter.setHymns(hymns);
             }
         });
 
+    }
 
-
-
-
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_hymnal, container, false);
+        buildListData();
+        initialiseRecyclerView(view);
         return view;
     }
 
@@ -92,7 +74,7 @@ public class HymnalFragment extends Fragment implements RecyclerViewAdapter.Item
         RecyclerView recyclerView = view.findViewById(R.id.hymnal_recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(list);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(hymnViewModel.getAllHymns().getValue());
         recyclerView.setAdapter(adapter);
     }
 
