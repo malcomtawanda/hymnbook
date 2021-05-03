@@ -12,7 +12,7 @@
         android:layout_height="60dp"
         android:textSize="35sp"
         android:text="1"
-        android:gravity="center"
+
         android:fontFamily="@font/poppins_medium"
         />
 
@@ -35,6 +35,7 @@
             android:id="@+id/hymn_lyrics_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="15sp"
             android:layout_gravity="center"
             />
 

@@ -27,34 +27,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        hymnViewModel = new ViewModelProvider(this).get(HymnViewModel.class);
 
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        Fragment fragment = fragmentManager.findFragmentById(R.id.main_container);
+
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragment = fragmentManager.findFragmentById(R.id.main_container);
+
+        if(fragment == null){
+            fragment = new HymnalFragment();
+            fragmentManager.beginTransaction().add(R.id.main_container, fragment).commit();
+        }
+
+//        RecyclerView recyclerView =  findViewById(R.id.hymnal_recyclerview);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView.setHasFixedSize(true);
 //
-//        if(fragment == null){
-//            fragment = new HymnalFragment();
-//            fragmentManager.beginTransaction().add(R.id.main_container, fragment).commit();
-//        }
-
-        RecyclerView recyclerView =  findViewById(R.id.hymnal_recyclerview);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter();
-        recyclerView.setAdapter(adapter);
-
-
-
-        //hymnViewModel = new ViewModelProvider(this).get(HymnViewModel.class);
-        hymnViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(HymnViewModel.class);
-        hymnViewModel.getAllHymns().observe(this, new Observer<List<Hymn>>() {
-            @Override
-            public void onChanged(List<Hymn> hymns) {
-                adapter.setHymns(hymns);
-                //Toast.makeText(MainActivity.this, "onchanged", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        RecyclerViewAdapter adapter = new RecyclerViewAdapter();
+//        recyclerView.setAdapter(adapter);
+//
+//
+//
+       hymnViewModel = new ViewModelProvider(this).get(HymnViewModel.class);
+//        //hymnViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(HymnViewModel.class);
+//        hymnViewModel.getAllHymns().observe(this, new Observer<List<Hymn>>() {
+//            @Override
+//            public void onChanged(List<Hymn> hymns) {
+//                adapter.setHymns(hymns);
+//                //Toast.makeText(MainActivity.this, "onchanged", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
 
 

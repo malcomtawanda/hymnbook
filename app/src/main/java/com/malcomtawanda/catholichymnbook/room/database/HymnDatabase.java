@@ -46,10 +46,10 @@ public abstract class HymnDatabase extends RoomDatabase {
         protected Void doInBackground(Void... voids) {
             //HymnalData hymnalData = new HymnalData();
             //hymnalDAO.insertAll(hymnalData.populateHymnalData());
-            hymnalDAO.insert(new Hymn("omberai", "cleber", "All praise to our redeeming Lord", true, 1));
-            hymnalDAO.insert(new Hymn("omberai", "cleber", "All praise to our redeeming Lord", true, 2));
-            hymnalDAO.insert(new Hymn("omberai", "cleber", "All praise to our redeeming Lord", true, 3));
-            hymnalDAO.insert(new Hymn("omberai", "cleber", "All praise to our redeeming Lord", true, 4));
+            hymnalDAO.insert(new Hymn("Omberai", "cleber", "All praise to our redeeming Lord", true, 1));
+            hymnalDAO.insert(new Hymn("Tenzi", "cleber", "All praise to our redeeming Lord", true, 2));
+            hymnalDAO.insert(new Hymn("Omebriks", "cleber", "All praise to our redeeming Lord", true, 3));
+            hymnalDAO.insert(new Hymn("Kristu", "cleber", "All praise to our redeeming Lord", true, 4));
 
             return null;
         }

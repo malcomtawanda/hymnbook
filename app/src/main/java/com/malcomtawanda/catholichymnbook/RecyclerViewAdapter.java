@@ -21,10 +21,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private List<Hymn> hymnList = new ArrayList<>();
 
-    //private ItemClickListener clickListener;
-
-
-
     @NonNull
     @Override
     public RecyclerViewAdapter.HymnalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
