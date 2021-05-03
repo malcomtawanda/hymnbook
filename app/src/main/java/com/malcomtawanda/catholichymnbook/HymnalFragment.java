@@ -14,14 +14,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.malcomtawanda.catholichymnbook.junk.HymnAdapter;
+
 import com.malcomtawanda.catholichymnbook.room.entity.Hymn;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class HymnalFragment extends Fragment implements RecyclerViewAdapter.ItemClickListener{
+public class HymnalFragment extends Fragment {
 
     private List<Hymn> list = new ArrayList<>();
 
@@ -75,7 +75,7 @@ public class HymnalFragment extends Fragment implements RecyclerViewAdapter.Item
             public void onChanged(List<Hymn> hymns) {
                 //update recyclerView
                 //Toast.makeText(MainActivity.this, "onChanged", Toast.LENGTH_SHORT).show();
-                adapter = new RecyclerViewAdapter(hymns);
+                //adapter = new RecyclerViewAdapter(hymns);
                 recyclerView.setAdapter(adapter);
 //                adapter.setHymns(hymns);
             }
@@ -92,7 +92,7 @@ public class HymnalFragment extends Fragment implements RecyclerViewAdapter.Item
         RecyclerView recyclerView = view.findViewById(R.id.hymnal_recyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(list);
+        //RecyclerViewAdapter adapter = new RecyclerViewAdapter(list);
         recyclerView.setAdapter(adapter);
     }
 
@@ -120,8 +120,5 @@ public class HymnalFragment extends Fragment implements RecyclerViewAdapter.Item
                         "When round His throne we meet!", true , 2));
     }
 
-    @Override
-    public void onItemClick(Hymn hymn) {
 
-    }
 }
